@@ -1,0 +1,23 @@
+<html>
+    <body>
+        
+    </body>
+    <script>
+var myHeaders = new Headers();
+myHeaders.append("Content-Type", "text/plain");
+
+var raw = "{\"id\":\"2\",\"name\":\"kaw\"}";
+
+var requestOptions = {
+  method: 'GET',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("http://localhost:8080/", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+    </script>
+</html>
